@@ -1,12 +1,13 @@
 .frame-427319403-1 {
-  height: 60px;
-  width: 120px;
+  height: 80px;
+  width: 160px;
   position: relative;
   object-fit: cover;
+  margin-left: 4rem;
 }
 
 .input-field {
-  width: 100%;
+  width: 60rem;
   margin-left: 10px;
   padding: 15px;
   font-size: 16px;
@@ -14,6 +15,7 @@
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  
 }
 
 .fields,
@@ -3857,11 +3859,16 @@
   color: var(--color-olivedrab-300);
   font-family: var(--font-raleway);
 }
+.fields-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem; /* Adds space between the two fields */
+}
 .contact-form-child {
   height: 977px;
   width: 1919px;
   position: relative;
-  background-color: var(--color-ivory-200);
+  /* background-color: var(--color-ivory-200); */
   display: none;
   max-width: 100%;
 }
@@ -3914,16 +3921,17 @@
   display: inline-block;
   min-width: 54px;
   z-index: 2;
+  font-weight: bold;
 }
 .fields,
 .fields-item {
-  border-radius: var(--br-5xs);
-  background-color: var(--color-white);
+  /* border-radius: var(--br-5xs); */
+  /* background-color: var(--color-white); */
   max-width: 100%;
 }
 .fields {
   align-self: stretch;
-  display: flex;
+  display: grid;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
@@ -3931,6 +3939,7 @@
   box-sizing: border-box;
   white-space: nowrap;
   z-index: 1;
+  width: 100%;
 }
 .fields-item {
   height: 75px;
@@ -3947,15 +3956,19 @@
   display: inline-block;
   min-width: 61px;
   z-index: 2;
+  font-weight: bold;
 }
 .fields1,
 .form-fields {
   align-self: stretch;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  box-sizing: border-box;
-  max-width: 100%;
+  display: flex; /* Ensures content layout within the box */
+  align-items: flex-start; /* Aligns items to the top of the container */
+  justify-content: flex-start; /* Aligns items to the left */
+  box-sizing: border-box; /* Includes padding and border in width/height */
+  max-width: 100rem; /* Prevents the box from exceeding 100% width */
+  padding: 10px; /* Optional: Adds some padding inside the box */
+  border: 1px solid #ccc;
+  background: #ffffff;
 }
 .fields1 {
   border-radius: var(--br-5xs);
