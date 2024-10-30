@@ -52,7 +52,7 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a href="index.html" class="nav-link active">Home</a>
+                <a href="#home" class="nav-link">Home</a>
               </li>
               <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
               <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
@@ -75,7 +75,7 @@
           }
         });
       });
-    </script>
+    </script>>
     <script>
       // Select all the nav links
       const navLinks = document.querySelectorAll('.nav-link');
@@ -92,7 +92,44 @@
       });
     </script>
     
+    <script>
+      // Function to set active class on navigation links
+      function setActiveNavLink() {
+        const sections = document.querySelectorAll('section'); // Select all sections
+        const navLinks = document.querySelectorAll('.nav-link'); // Select all nav links
+    
+        const options = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.5 // Trigger when at least 50% of the section is visible
+        };
+    
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const id = entry.target.id;
+            const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
+    
+            if (entry.isIntersecting) {
+              navLink.classList.add('active');
+            } else {
+              navLink.classList.remove('active');
+            }
+          });
+        }, options);
+    
+        // Observe each section
+        sections.forEach(section => {
+          observer.observe(section);
+        });
+      }
+    
+      // Call the function when the DOM is fully loaded
+      document.addEventListener('DOMContentLoaded', setActiveNavLink);
+    </script>
+    
+    
     <!-- Image Carousel -->
+     <section id="home">
     <div
       id="carousel"
       class="carousel slide"
@@ -128,6 +165,7 @@
 
       <!-- End Image Carousel -->
     </div>
+  </section>
 
     <!-- End Navigation Sticky ID Section -->
 
@@ -137,7 +175,8 @@
 
 
 <!-- About AppWizer -->
-<div class="border-top border-dark w-100  mx-auto" id="about">
+ <section id = "about">
+<div class="border-top border-dark w-100  mx-auto">
 	<div class="col-12 text-center mt-5">
 		<h1 class="display-4 pt-4 header-text">About Us</h1>
 		<div class="border-top border-dark w-50 my-3 mx-auto">
@@ -188,7 +227,9 @@
 
   <!-- End Two Column Section -->
 </div>
+</section>
  <!-- End About -->
+  <section id="services">
  <div class="border-top border-dark w-100 my-3 mx-auto" id="services"></div>
       <!-- Main Page Heading -->
       <div class="col-12 text-center mt-5" >
@@ -271,9 +312,9 @@
         </div>
       </div>
       </div>
-
+    </section>
       <!-- End Three Column Section -->
-
+    <section id="products">
 	  <div class="border-top border-dark w-100 my-3 mx-auto" id="products">
 		<div class="col-12 text-center mt-5">
 			<h1 class="display-4 pt-4 header-text">SmartTracker</h1>
@@ -314,6 +355,7 @@
 
       <!-- End Two Column Section -->
     </div>
+  </section>
     <!-- End Social Media Sticky -->
 
     <!-- Start Fixed Background IMG 
@@ -428,6 +470,7 @@
   
 
 	<!-- Contact us form -->
+   <section id="contactus">
   <div class="border-top border-dark w-100 my-3 mx-auto" id="contactus">
     <div class="col-12 text-center mt-5">
       <h1 class="display-4 pt-4 header-text">Contact US</h1>
@@ -478,7 +521,7 @@
               </div>
             </div>
             <div class="form-group row">
-              <div class="col-sm-10 text-right">
+              <div class="col-sm-1 text-right0">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </div>
             </div>
@@ -487,6 +530,7 @@
       </div>
     </div>
   </div>
+</section>
   
   <script>
     document.getElementById("contactForm").addEventListener("submit", function (event) {
@@ -518,7 +562,7 @@
       };
   
       // Send the form data to the server
-      fetch("https://webdev.appwizersolutions.com/send", {
+      fetch("httsp:/webdev.appwizersolutions.com2/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -624,5 +668,3 @@
     <script src="js/all.min.js"></script>
 
     <!-- End Script Source Files -->
-  </body>
-</html>
