@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./index.css" />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Appwizer Solutions</title>
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- <link rel="stylesheet" href="css/global.css" /> -->
+    <!-- <link rel="stylesheet" href="css/index.css" /> -->
+    <!-- Google Fonts -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap"
@@ -18,492 +28,564 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Open Sans:wght@600&display=swap"
     />
-    <!-- EmailJS SDK -->
-    <!-- <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init("j0rLI1EmpcczepAx0"); // Replace with your Public Key
-        })();
-    </script> -->
   </head>
   <body>
-    <div class="appwizer-webpage">
-      <section class="content" id="home">
-        <div class="frame-parent">
-          <div class="frame-wrapper">
-            <div class="navbar-parent">
-              <div class="navbar">
-                <img
-                  class="frame-427319403-1"
-                  loading="lazy"
-                  alt=""
-                  src="./public/appwizer_logo2.png"
-                />
+    <div id="navigation-sticky">
+      <!-- Navigation -->
+      <nav class="navbar bg-light navbar-light navbar-expand-lg fixed-top">
+        <div class="container">
+          <a href="index.html" class="navbar-brand"
+            ><img
+              src="img/logo.png"
+              alt="appwizer solutions logo"
+              title="Appwizer logo"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-tartge="#navbarResponsive"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                <div class="menu">
-                  <nav class="menu-options">
-                    <div class="home-wrapper">
-                      <a class="home" href="#home">Home</a>
-                    </div>
-                    <a class="products" href="#products">Products</a>
-                    <a class="services" href="#services">Services</a>
-                  </nav>
-                </div>
-              </div>
-              <div class="business-content-wrapper">
-                <div class="business-content">
-                  <h1 class="a-better-it">Value for your Business</h1>
-                  <div class="lorem-ipsum-dolor">
-                    Appwizer is committed to providing exceptional value to its
-                    customers with a comprehensive range of services, including
-                    Software as a Service (SaaS), Technology Consultation
-                    through CTO as a Service, and Talent as a Service.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="contact-background-parent">
-            <img
-              class="contact-background-icon"
-              loading="lazy"
-              alt=""
-              src="./public/pexels-fauxels-3183183.jpg"
-            />
-
-            <button class="rectangle-parent">
-              <div class="frame-child"></div>
-              <a class="contact-us" href="#contact-us">Contact us</a>
-            </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link active">Home</a>
+              </li>
+              <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+              <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+              <li class="nav-item"><a href="#products" class="nav-link">Products</a></li>
+              <li class="nav-item">
+                <a href="#contactus" class="nav-link">Contact Us</a>
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
+      </nav>
+    </div>
+    <!-- End Navigation -->
 
-      <section class="vision">
-        <div class="vision-content">
-          <div class="vision-content-child"></div>
-          <div class="our-vision-wrapper">
-            <h1 class="our-vision">Our Vision and Mission</h1>
-          </div>
-          <div class="vision-details">
-            <div class="vision-details-inner">
-              <!-- <div class="frame-parent19"> -->
-              <div class="frame-parent20">
-                <div class="ellipse-wrapper10">
-                  <div class="frame-child19"></div>
-                </div>
-                <p class="vision-statement-text">
-                  Vision Statement: "Appwizer envisions a future where
-                  businesses seamlessly manage and track their assets, where
-                  fresh talents are honed into skilled professionals through our
-                  unique internship programs, and where organizations across the
-                  globe benefit from our expert deep technology consultation
-                  services. We aspire to be a beacon of wisdom, guiding
-                  enterprises towards sustainable growth, fostering a culture of
-                  continuous learning and technological excellence."
-                </p>
-              </div>
-              <div class="frame-parent21">
-                <div class="frame-parent22">
-                  <div class="ellipse-wrapper11">
-                    <div class="frame-child20"></div>
-                  </div>
-                  <p class="vision-statement-text">
-                    Mission Statement: "At Appwizer, our mission is to empower
-                    businesses through innovative solutions, leveraging
-                    technology to optimize asset management, nurture talent
-                    through hands-on internships, and provide unparalleled deep
-                    technology consultation services. We strive to be the
-                    catalyst for smarter and more efficient operations,
-                    contributing to the success and growth of our clients and
-                    interns alike."
-                  </p>
+    <script>
+      // Select all the nav links
+      const navLinks = document.querySelectorAll('.nav-link');
+    
+      // Loop through each nav link
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          // Remove the 'active' class from all links
+          navLinks.forEach(nav => nav.classList.remove('active'));
+          
+          // Add the 'active' class to the clicked link
+          this.classList.add('active');
+        });
+      });
+    </script>
+    
+    <!-- Image Carousel -->
+    <div
+      id="carousel"
+      class="carousel slide"
+      data-bs-ride="carousel"
+      data-bs-interval="1000"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/carousel/ThinkingValue.jpg" alt="Thinking Value" class="w-100" />
+          <div class="carousel-caption">
+            <div class="container">
+              <div class="row justify-content-end">
+                <div
+                  class="d-none d-md-block col-11-md col-lg-9 col-xl-8 bg-dark text-right"
+                >
+                  <!-- <h3 class="pb-3">Think Value</h3> -->
                 </div>
               </div>
-              <div class="learn-more-link">
-                <button class="link-parent">
-                  <div class="link-parent-child"></div>
-                  <div class="learn-more6">Learn more</div>
-                </button>
-              </div>
-              <!-- </div> -->
             </div>
           </div>
         </div>
-      </section>
+        <div class="carousel-item">
+          <img src="img/carousel/2.jpg" alt="" class="w-100" />
+        </div>
+        <div class="carousel-item">
+          <img src="img/carousel/3.jpg" alt="" class="w-100" />
+        </div>
+      </div>
 
-      <section id="services" class="services1">
-        <div class="services-content">
-          <h1 class="our-featured-serivices">Our Featured Services</h1>
-          <div class="services-grid">
-            <div class="component-25">
-              <div class="item-backgrounds"></div>
-              <div class="item-content">
-                <div class="item-details">
-                  <b class="title1">CTO as a Service </b>
-                  <div class="lorem-ipsum-dolor1">
-                    CTO as a Service offers your business expert guidance and
-                    strategic direction in technology, helping you navigate
-                    complex technological landscapes and make informed
-                    decisions. Whether you need an interim CTO or ongoing
-                    technology leadership, our service ensures you have the
-                    expertise necessary to drive innovation and achieve your
-                    business goals. Our engagement model ensures that we bring a
-                    smooth digital transformation.
-                  </div>
-                </div>
-              </div>
-              <button class="button-backgrounds-parent">
-                <div class="button-backgrounds"></div>
-                <a class="learn-more" href="#contact-us">Learn more</a>
-              </button>
-            </div>
-            <div class="component-25">
-              <div class="component-26-child"></div>
-              <div class="component-26-inner">
-                <div class="title-parent">
-                  <b class="title1">Talent as a Service</b>
-                  <div class="lorem-ipsum-dolor2">
-                    Appwizer is dedicated to talent development by prioritizing
-                    the growth and advancement of our team members. We offer
-                    ongoing professional development opportunities, mentorship
-                    programs, and skill enhancement workshops tailored to each
-                    employee's individual needs. By fostering a culture of
-                    continuous learning and inculcating a zeal for self
-                    development, we transform raw talent into exceptional
-                    professionals.
-                  </div>
-                </div>
-              </div>
-              <button class="rectangle-group">
-                <div class="frame-item"></div>
-                <a class="learn-more" href="#contact-us">Learn more</a>
-              </button>
-            </div>
+      <!-- Carousel Content -->
 
-            <div class="component-25">
-              <div class="component-30-child"></div>
-              <div class="component-30-inner">
-                <div class="title-container">
-                  <b class="title1">Training as a Service</b>
-                  <div class="lorem-ipsum-dolor4">
-                    At Appwizer, we are dedicated to giving back to society by
-                    nurturing talent through our comprehensive training
-                    programs. We offer internships and conduct lectures at
-                    colleges in rural and semi-urban areas. Our hands-on
-                    training bridges the gap between academia and industry,
-                    equipping future professionals with essential skills. By
-                    investing in these initiatives, we contribute to the
-                    community and help meet the technology sector's demands.
-                  </div>
-                </div>
-              </div>
-              <button class="group-button">
-                <div class="rectangle-div"></div>
-                <a class="learn-more" href="#contact-us">Learn more</a>
-              </button>
+      <!-- End Carousel Content -->
+
+      <!-- Carousel Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- End Carousel Indicators -->
+
+      <!-- End Image Carousel -->
+    </div>
+
+    <!-- End Navigation Sticky ID Section -->
+
+    <div id="social-media-sticky">
+      <!-- Start Social Jumbotron -->
+
+      <div class="jumbotron sticky-top">
+        <div class="container">
+          <div class="row justify-contemnt-center text-center">
+            <div class="d-none d-xl-block col-xl-6 pt-1">
+              <h3>Connect with us on Social Media</h3>
+            </div>
+            <div class="col-sm-10 col-md-8 col-xl-6 pt-1">
+              <ul class="social">
+                <!-- <li>
+                  <a href="" target="_blank">
+                    <i class="fab fa-facebook" style="color:#3b5998;"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="" target="_blank">
+                    <i class="fab fa-twitter"  style="color:#00aced;"></i>
+                  </a>
+                </li> -->
+                <li>
+                  <a href="https://www.linkedin.com/company/appwizer-solutions/" target="_blank">
+                    <i class="fab fa-linkedin"  style="color:#0E76a8;"></i>
+                  </a>
+                </li>
+                <!-- <li>
+                  <a href="" target="_blank">
+                    <i class="fab fa-instagram"  styele="color:#3b5998;"></i>
+                  </a>
+                </li> -->
+                <!-- <li>
+                  <a href="" target="_blank">
+                    <i class="fab fa-youtube"  style="color:#c4302b;"></i>
+                  </a>
+                </li> -->
+              </ul>
             </div>
           </div>
         </div>
-      </section>
-      <section id="products" class="appwizer-webpage-inner">
-        <div class="frame-group">
-          <div class="frame-container">
-            <div class="best-creative-it-solutions-parent">
-              <h1 class="best-creative-it-container">
-                <p class="best-creative-it">SmartTracker</p>
-              </h1>
-              <p class="smarttracker-desc">
-                Struggling to manage cylinder inventory efficiently, losing
-                revenue due to hoarding and untracked cylinders.
-              </p>
-              <p class="smarttracker-statement">
-                - Problem faced by all MSME gas distributors
-              </p>
-            </div>
-            <div class="product-frame">
-              <div class="frame-parent1">
-                <div class="frame-parent2">
-                  <div class="ellipse-wrapper">
-                    <div class="ellipse-div"></div>
-                  </div>
-                  <p class="product-feature">
-                    Real-time cylinder tracking, cylinders with customer,
-                    refillers or cylinders on the move.
-                  </p>
-                </div>
-                <div class="frame-parent3">
-                  <div class="ellipse-container">
-                    <div class="frame-child3"></div>
-                  </div>
-                  <p class="product-feature">
-                    Take charge of your inventory, customer holdings, ageing
-                    analysis for different sizes and gas types.
-                  </p>
-                </div>
-                <div class="frame-parent4">
-                  <div class="ellipse-frame">
-                    <div class="frame-child4"></div>
-                  </div>
-                  <p class="product-feature">
-                    Latest features like QR scanning, Mobile application and
-                    WhatsApp integration.
-                  </p>
-                </div>
-                <div class="frame-parent5">
-                  <div class="ellipse-wrapper1">
-                    <div class="frame-child5"></div>
-                  </div>
-                  <p class="product-feature">
-                    Pay as you go, No capital investment and avaialble to use
-                    from day 1.
-                  </p>
-                </div>
+      </div>
+      <!-- End Social Jumbotron -->
+
+
+
+<!-- About AppWizer -->
+<div class="border-top border-dark w-100 my-3 mx-auto" id="about">
+	<div class="col-12 text-center mt-5">
+		<h1 class="display-4 pt-4 header-text">About Us</h1>
+		<div class="border-top border-dark w-50 my-3 mx-auto">
+			<p class="lead subheader-text">Think Solutions. Think Value. 
+				
+		</div>
+	  </div>
+
+   <div class="container mt-5">
+	<div class="row py-4">
+		<div class="col-lg-6 mb-4 my-lg-auto">
+
+			<p class="mb-4">
+				<h5 >
+					Our Vision : </h5>
+					<p  class="text-justify">
+					"Appwizer envisions a future where
+					businesses seamlessly manage and track their assets, where
+					fresh talents are honed into skilled professionals through our
+					unique internship programs, and where organizations across the
+					globe benefit from our expert deep technology consultation
+					services. We aspire to be a beacon of wisdom, guiding
+					enterprises towards sustainable growth, fostering a culture of
+					continuous learning and technological excellence."
+				  </p>
+				 
+			</p>
+		</div>
+		<div class="col-lg-6">
+			<p class="mb-4">
+				<h5 >
+					Our Mission : </h5>
+					<p  class="text-justify">
+						"At Appwizer, our mission is to empower
+						businesses through innovative solutions, leveraging
+						technology to optimize asset management, nurture talent
+						through hands-on internships, and provide unparalleled deep
+						technology consultation services. We strive to be the
+						catalyst for smarter and more efficient operations,
+						contributing to the success and growth of our clients and
+						interns alike."
+				  </p>
+				 
+			</p>
+		</div>
+	</div>
+   </div>
+
+  <!-- End Two Column Section -->
+</div>
+ <!-- End About -->
+
+      <!-- Main Page Heading -->
+       <div class="border-top w-100 my-3 mx-auto" id="services">
+      <div class="col-12 text-center mt-5">
+        <h1 class="display-4 pt-4 header-text">Services</h1>
+        <div class="border-top border-dark w-50 my-3 mx-auto">
+          <p class="lead subheader-text" >Wizer Digital Organizations</p>
+        </div>
+      </div>
+
+      <!-- Three Column Section -->
+      <div class="container">
+        <div class="row justify-content-center my-5 text-center">
+          <div class="col-md-6 col-lg-4 py-3">
+            <div>
+              <b class="title">CTO as a Service </b>
+              <div class="text-justify">
+                CTO as a Service offers your business expert guidance and
+                strategic direction in technology, helping you navigate complex
+                technological landscapes and make informed decisions. Whether
+                you need an interim CTO or ongoing technology leadership, our
+                service ensures you have the expertise necessary to drive
+                innovation and achieve your business goals. Our engagement model
+                ensures that we bring a smooth digital transformation.
               </div>
             </div>
           </div>
-          <img
-            class="rectangle-icon"
-            loading="lazy"
-            alt=""
-            src="./public/rectangle-2911@2x.png"
-          />
-        </div>
-      </section>
-
-      <!-- <section class="share">
-        <div class="share-container">
-          <h1 class="share-this-page">Share this Page</h1>
-          <div class="social-icons">
-            <div class="icons1">
-              <img
-                class="brand-twitter-icon"
-                loading="lazy"
-                alt=""
-                src="./public/brandtwitter.svg"
-              />
-
-              <img
-                class="brand-facebook-icon"
-                loading="lazy"
-                alt=""
-                src="./public/brandfacebook.svg"
-              />
-
-              <img
-                class="brand-whatsapp-icon"
-                loading="lazy"
-                alt=""
-                src="./public/brandwhatsapp.svg"
-              />
-
-              <img
-                class="brand-instagram-icon"
-                loading="lazy"
-                alt=""
-                src="./public/brandinstagram.svg"
-              />
-
-              <img
-                class="brand-linkedin-icon"
-                loading="lazy"
-                alt=""
-                src="./public/brandlinkedin.svg"
-              />
+          <div class="col-md-6 col-lg-4 py-3">
+            <div>
+              <b class="title mb-4">Talent as a Service </b>
+              <div class="text-justify">
+                Appwizer is dedicated to talent development by prioritizing the
+                growth and advancement of our team members. We offer ongoing
+                professional development opportunities, mentorship programs, and
+                skill enhancement workshops tailored to each employee's
+                individual needs. By fostering a culture of continuous learning
+                and inculcating a zeal for self development, we transform raw
+                talent into exceptional professionals.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 py-3">
+            <div>
+              <b class="title mb-4">Training as a Service </b>
+              <div class="text-justify">
+                At Appwizer, we are dedicated to giving back to society by
+                nurturing talent through our comprehensive training programs. We
+                offer internships and conduct lectures at colleges in rural and
+                semi-urban areas. Our hands-on training bridges the gap between
+                academia and industry, equipping future professionals with
+                essential skills. By investing in these initiatives, we
+                contribute to the community and help meet the technology
+                sector's demands.
+              </div>
             </div>
           </div>
         </div>
-      </section> -->
-      <section id="contact-us" class="contact-form">
-        <div class="contact-form-child"></div>
-        <div class="form-container">
-          <form id="contact-us" class="form">
-            <h1 class="contact-us1">Contact Us</h1>
-            <div class="form-subtitle">
-              <p class="fill-this-form">
-                Fill this form and we’ll get back to you soon.
-              </p>
+      </div>
+    </div>
+      <!-- End Three Column Section -->
+
+	  <div class="border-top border-dark w-100 my-3 mx-auto" id="products">
+		<div class="col-12 text-center mt-5">
+			<h1 class="display-4 pt-4 header-text">SmartTracker</h1>
+			<div class="border-top border-dark w-50 my-3 mx-auto">
+				<p class="lead subheader-text">Manage cylinder inventory efficiently. Stop losing
+					revenue due to hoarding and untracked cylinders.
+					
+			</div>
+		  </div>
+	
+
+      <!-- Start Two Column Section -->
+	   <div class="container mt-5">
+		<div class="row py-4">
+			<div class="col-lg-5 mb-4 my-lg-auto">
+
+				<p class="mb-4">
+					<ul> 
+						<li> Real-time cylinder tracking, cylinders with customer,
+							refillers or cylinders on the move.</li>
+						<li>Take charge of your inventory, customer holdings, ageing
+								analysis for different sizes and gas types.</li>
+						<li> Latest features like QR scanning, In app Notifications,Mobile application and
+									WhatsApp integration.</li>
+					</ul>
+					 
+				</p>
+			</div>
+			<div class="col-lg-7"><img src="img/smarttracker.jpg" alt="" class="w-100"></div>
+		</div>
+	   </div>
+
+      <!-- End Two Column Section -->
+    </div>
+    <!-- End Social Media Sticky -->
+
+    <!-- Start Fixed Background IMG 
+      <div class="fixed-wrap">
+        <div class="fixed"></div>
+      </div>
+    </div>
+    <!-- End Fixed Background IMG -->
+
+    <div id="text-button-sticky">
+      <!-- Start Bundle Pack Jumbotron -->
+      <div class="jumbotron sticky-top" style="margin-bottom: 2px">
+        <div class="container">
+          <div class="row justify-content-center text-center">
+            <div class="d-none d-md-block col-md-8 col-xl-7 my-auto">
+              <h4>Derive Value from your solutions!</h4>
             </div>
-            <div class="form-fields">
-              <div class="fields">
-                <div class="fields-item"></div>
-                <label for="services" class="name">Select Service</label>
-                <select id="services" name="services" class="input-field" required>
-                  <option value="" disabled selected>Select a Service</option>
-                  <option value=" SmartTracker">SmartTracker</option>
-                  <option value=" CTO as a Service">CTO as a Service</option>
-                  <option value=" Custom Development">Custom Development</option>
-                  <option value=" Training as a Service">Training as a Service</option>
-                </select>
-              </div>
-              <div class="fields">
-                <div class="fields-child"></div>
-                <label for="name" class="name">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  class="input-field"
-                  required
-                />
-              </div>
-              <div class="fields">
-                <div class="fields-item"></div>
-                <label for="email" class="e-mail">E-mail</label>
-                <input
-                  type="email"
-                  id="email"
-                  class="input-field"
-                  name="email"
-                  required
-                />
-              </div>
-              <div class="fields">
-                <div class="fields-item"></div>
-                <label for="Remarks" class="name">Remarks</label>
-                <input
-                  type="text"
-                  id="remarks"
-                  class="input-field"
-                  name="remarks"
-                  required
-                />
+
+            <div class="col-md-4 col-xl-3 pt-1 pt-md-2 pb-2">
+              <a
+                href="#contactus"
+                target="_blank"
+                class="btn btn-primary btn-md"
+                > Contact Us</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Bundle Pack Jumbotron -->
+
+      <!-- Our Team 
+	   <div class="container">
+		<div class="col-12 text-center mt-5">
+			<h1 class="display-4 pt-4 header-text">Our Team</h1>
+			<div class="border-top border-dark w-50 my-3 mx-auto">
+			
+			</div>
+		  </div>
+		<div class="row justify-content-center my-5 text-center">
+	
+			<div class="col-md-6 col-lg-4 my-4">
+				<h1>CEO</h1>
+				<img src="img/photo.jpeg" alt="tejas" class="w-100">
+				<p>Worked in the industry for </p>
+				<a
+                href="https://www.linkedin.com/in/tejas-limaye-a5974935/"
+                target="_blank"
+                class="btn btn-primary btn-md"
+                >Tejas Limaye</a
+              >
+			</div>
+			<div class="col-md-6 col-lg-4 my-4">
+				<h1>CTO, Head of Technology</h1>
+				<img src="img/photo.jpeg" alt="Vikas" class="w-100">
+				<p>Experienced in Digital platforms and Large scale digital transformations</p>
+				<a
+                href="https://www.linkedin.com/in/vikas-digital-leadership/"
+                target="_blank"
+                class="btn btn-primary btn-md"
+                >Vikas Nilajkar</a
+              >
+			</div>
+			<div class="col-md-6 col-lg-4 my-4">
+				<h1>CFO </h1>
+				<img src="img/photo.jpeg" alt="milind" class="w-100">
+				<p>Vast experience in Banking </p>
+				<a
+                href="https://w3newbie.com"
+                target="_blank"
+                class="btn btn-primary btn-md"
+                >Milind </a
+              >
+			</div>
+		</div>
+	   </div>
+
+      <!-- End Three Column Section -->
+
+      <!-- border -->
+	  <!-- <div class="border-top border-dark w-50 my-3 mx-auto"> -->
+    </div>
+    <!-- End Text Button Sticky -->
+
+    <!-- Start Two Column Section -->
+
+    <!-- End Two Column Section -->
+
+    <!-- Start Website Designs Jumbotron 
+    <div class="jumbotron py-5 mb-0 ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 col-lg-8 col-xl-9 my-auto">
+            <h4>
+              Looking for quality, easy-to-use mobile-friendly website designs?
+            </h4>
+          </div>
+
+          <div class="col-md-5 col-lg-4 col-xl-3 pt-4 pt-md-0">
+            <a
+              href="#"
+              target="_blank"
+              class="btn btn-primary btn-lg"
+              >Visit Us Today</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Website Designs Jumbotron -->
+
+	<!-- Contact us form -->
+  <div class="border-top border-dark w-100 my-3 mx-auto" id="contactus">
+    <div class="col-12 text-center mt-5">
+      <h1 class="display-4 pt-4 header-text">Contact US</h1>
+      <div class="border-top border-dark w-50 my-3 mx-auto">
+        <p class="lead subheader-text">Reach out to us.</p>
+      </div>
+    </div>
+  
+    <!-- Start Two Column Section -->
+    <div class="container mt-5" id="contactus">
+      <div class="row py-4">
+        <div class="col-lg-11 mb-4 my-lg-auto">
+          <form id="contactForm">
+            <div class="form-group row">
+              <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputName" placeholder="Name" required>
               </div>
             </div>
-            <button type="submit" class="submit-button">
-              <div class="submit-button-child"></div>
-              <div class="submit">Submit</div>
-            </button>
+            <div class="form-group row">
+              <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputComments" class="col-sm-2 col-form-label">Comments</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputComments" placeholder="Comments" required>
+              </div>
+            </div>
+  
+            <div class="form-group row">
+              <div class="col-sm-2">Services interested in</div>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="ctoCheck" value="CTO as a service">
+                  <label class="form-check-label" for="ctoCheck">CTO as a service</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="smarttrackerCheck" value="SmartTracker">
+                  <label class="form-check-label" for="smarttrackerCheck">SmartTracker</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="trainingCheck" value="Training as a service">
+                  <label class="form-check-label" for="trainingCheck">Training as a service</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
           </form>
         </div>
-      </section>
-      <!-- <script type="text/javascript">
-        // Initialize EmailJS
-        emailjs.init("j0rLI1EmpcczepAx0"); // Replace with your EmailJS user ID
-
-        // Add event listener to the form
-        document.getElementById('contact-us').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            // Send the form using EmailJS
-            emailjs.sendForm('service_ib7n28q', 'template_pv3rq78', this)
-                .then(function() {
-                    alert('Your message has been sent successfully!');
-                    document.getElementById('contact-us').reset(); // Reset the form
-                }, function(error) {
-                    alert('Failed to send your message. Please try again.');
-                    console.error('EmailJS error:', error);
-                });
-        });
-    </script> -->
-
-      <script>
-        document
-          .getElementById("contact-us")
-          .addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const service = document.getElementById("services").value;
-            const remark = document.getElementById("remarks").value;
-
-            // Simple email validation
-            const emailPattern =
-              /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-            if (!emailPattern.test(email)) {
-              alert("Please enter a valid email address.");
-              return;
-            }
-
-            // Prepare form data
-            const formData = {
-              name: name,
-              email: email,
-              service: service,
-              remark: remark,
-            };
-
-            // Send the form data to the server
-            fetch("http://localhost:2222/send", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(formData),
-            })
-              .then((response) => response.json())
-              .then((data) => {
-                if (data.success) {
-                  alert("Your message has been successfully sent.");
-                } else {
-                  throw new Error(data.message);
-                }
-              })
-              .catch((error) => {
-                alert(
-                  "There was a problem with your submission: " + error.message
-                );
-              });
-          });
-      </script>
-
-      <footer class="footer">
-        <div class="footer-child"></div>
-        <!-- <div class="footer-content">
-          <div class="rectangle-parent4">
-            <div class="frame-child28"></div>
-            <img
-              class="frame-427319403-11"
-              alt=""
-              src="./public/frame-427319403-1@2x.png"
-            />
-          </div>
-           <div class="footer-links">
-            <div class="link-columns">
-              <div class="about-parent">
-                <b class="about">About</b>
-                <div class="link-items">
-                  <div class="help-center">Help center</div>
-                  <div class="forums">Forums</div>`
-                  <div class="contact-us2">Contact us</div>
-                </div>
-              </div>
-              <div class="help-parent">
-                <b class="help">Help</b>
-                <div class="help-center-parent">
-                  <div class="help-center1">Help center</div>
-                  <div class="forums1">Forums</div>
-                  <div class="contact-us3">Contact us</div>
-                </div>
-              </div>
-              <div class="extensions-parent">
-                <b class="extensions">Extensions</b>
-                <div class="help-center-group">
-                  <div class="help-center2">Help center</div>
-                  <div class="forums2">Forums</div>
-                  <div class="contact-us4">Contact us</div>
-                </div>
-              </div>
-            </div>
-          </div> 
-        </div> -->
-        <div class="copyright">
-          <div class="copyright-content">
-            <div class="copyright-wrapper">
-              <img
-                class="copyright-icon"
-                loading="lazy"
-                alt=""
-                src="./public/copyright.svg"
-              />
-            </div>
-            <div class="copyright-appwizer-all">
-              Copyright Appwizer. All rights Reserved
-            </div>
-          </div>
-        </div>
-      </footer>
+      </div>
     </div>
+  </div>
+  
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the default form submission
+  
+      const name = document.getElementById("inputName").value;
+      const email = document.getElementById("inputEmail").value;
+      const comments = document.getElementById("inputComments").value;
+  
+      // Collect selected services
+      const services = [];
+      if (document.getElementById("ctoCheck").checked) services.push("CTO as a service");
+      if (document.getElementById("smarttrackerCheck").checked) services.push("SmartTracker");
+      if (document.getElementById("trainingCheck").checked) services.push("Training as a service");
+  
+      // Simple email validation
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+  
+      // Prepare form data
+      const formData = {
+        name: name,
+        email: email,
+        services: services,
+        comments: comments,
+      };
+  
+      // Send the form data to the server
+      fetch("http://localhost:2222/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            alert("Your message has been successfully sent.");
+            document.getElementById("contactForm").reset(); // Reset form after successful submission
+          } else {
+            throw new Error(data.message);
+          }
+        })
+        .catch((error) => {
+          alert("There was a problem with your submission: " + error.message);
+        });
+    });
+  </script>
+  
+<!-- End Contact us Form -->
+
+    <!-- Start Footer -->
+	 <footer >
+		<div class="container">
+			<div class="row justify-content-center text-center text-light">
+				<div class="col-md-9">
+					<img src="img/logo2.png" alt="">
+					<p class="text-center"> Appwizer Solutions (OPC) Private Limited </p>
+					<p class="text-center"> CIN: U62090PN2024OPC228497 </p>
+					<p class="text-center"> ARegd Office: Flat no E/12 Srushti, Nr Guru Ganesh Nagar, Kothrud, Pune- 411038, Maharashtra </p>
+					<p><a href="tel:+919637418458">+91 9637418458</a>
+					<a href="mailto:+tejas.limaye@appwizersolutions.com">Email appwizer</a></p>
+						
+				</div>
+			</div>
+		</div>
+	 </footer>
+
+    <!-- End Footer -->
+
+    <!-- Start Socket -->
+<div class="socket text-light text-center py-4">
+	<p>&copy; Appwizer Solutions </a></p>
+</div>
+    <!-- End Socket -->
+
+    <!-- Script Source Files -->
+
+    <!-- jQuery -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Popper JS -->
+    <script src="js/popper.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="js/all.min.js"></script>
+
+    <!-- End Script Source Files -->
   </body>
 </html>
