@@ -66,7 +66,22 @@
       </nav>
     </div>
     <!-- End Navigation -->
-
+    <script>
+      // Select all the nav links
+      const navLinks = document.querySelectorAll('.nav-link');
+    
+      // Loop through each nav link
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          // Remove the 'active' class from all links
+          navLinks.forEach(nav => nav.classList.remove('active'));
+          
+          // Add the 'active' class to the clicked link
+          this.classList.add('active');
+        });
+      });
+    </script>
+    
     <!-- Image Carousel -->
     <div
       id="carousel"
@@ -475,6 +490,58 @@
    </div>
 </div>
 <!-- End Contact us Form -->
+
+  <script>
+    document.getElementById("contactus").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      const name = document.getElementById("inputName").value;
+      const email = document.getElementById("inputEmail").value;
+      const comments = document.getElementById("inputComments").value;
+
+      // Collect selected services
+      const services = [];
+      if (document.getElementById("ctoCheck").checked) services.push("CTO as a service");
+      if (document.getElementById("smarttrackerCheck").checked) services.push("SmartTracker");
+      if (document.getElementById("trainingCheck").checked) services.push("Training as a service");
+
+      // Simple email validation
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      // Prepare form data
+      const formData = {
+        name: name,
+        email: email,
+        services: services,
+        comments: comments,
+      };
+
+      // Send the form data to the server
+      fetch("http://localhost:2222/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            alert("Your message has been successfully sent.");
+            document.getElementById("contactForm").reset(); // Reset form after successful submission
+          } else {
+            throw new Error(data.message);
+          }
+        })
+        .catch((error) => {
+          alert("There was a problem with your submission: " + error.message);
+        });
+    });
+  </script>
 
   <!-- Social Media start-->
   <div id="social-media-sticky">
