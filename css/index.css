@@ -3866,7 +3866,7 @@
 }
 .contact-form-child {
   height: 977px;
-  width: 1919px;
+  /* width: 1919px; */
   position: relative;
   /* background-color: var(--color-ivory-200); */
   display: none;
@@ -4035,7 +4035,7 @@
   gap: var(--gap-13xl);
 }
 .form-container {
-  width: 486px;
+  /* width: 486px; */
   padding: var(--padding-29xl) 0 0;
   box-sizing: border-box;
   min-width: 486px;
@@ -4323,6 +4323,9 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+  .input-field {
+    width: 60rem;
+  }
 }
 @media screen and (max-width: 1275px) {
   .contact-background-parent {
@@ -4455,6 +4458,9 @@
     padding-left: 105px;
     padding-right: 184px;
     box-sizing: border-box;
+  }
+  .input-field {
+    width: 50rem;
   }
 }
 @media screen and (max-width: 900px) {
@@ -5026,6 +5032,9 @@
     padding: var(--padding-46xl) var(--padding-73xl) var(--padding-38xl)
       var(--padding-33xl);
     box-sizing: border-box;
+  }  
+  .input-field {
+    width: 40rem;
   }
 }
 @media screen and (max-width: 450px) {
@@ -5584,5 +5593,8 @@
   }
   .copyright-appwizer-all {
     font-size: var(--font-size-lgi);
+  }  
+  .input-field {
+    width: 10rem;
   }
 }

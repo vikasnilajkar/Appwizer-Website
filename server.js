@@ -11,61 +11,73 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.post("/send", (req, res) => {
-  const { name, email, service, remark } = req.body;
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_PASS, // Secured in .env
+  },
+});
 
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: "team.appwizersolutions@gmail.com",
-      pass: "tcgj erzb hric jypp",
-    },
-  });
-
-  // Mail to admin
-  const mailOptionsToAdmin = {
-    from: process.env.GMAIL_USER,
-    to: "pratiksha.patil@appwizersolutions.com", // Admin email
-    subject: "New Contact Us Form Submission",
-    text: `
-      You have received a new submission from the Contact Us form on Appwizer.
-  
-      Details of the submission:
-  
-      Name: ${name}
-      Email: ${email}
-      Service Interested In: ${service}
-      Remark/Message: ${remark}
-  
-      Please follow up with the user at: ${email}.
-    `,
-    replyTo: email,
-  };
-  
-
-  // Mail to the user who submitted the form
-  const mailOptionsToUser = {
-    from: process.env.GMAIL_USER,
-    to: email, // Send back to the user
-    subject: "Thank you for your submission!",
-    text: `Hi ${name},\n\nThank you for reaching out to us regarding "${service}". We have received your message and will get back to you shortly.\n\nYou can learn more about our SmartTracker product here: https://smarttracker-next.appwizersolutions.com\n\nBest regards,\nAppwizer Team`,
-  };
-  
-  // Send email to admin
-  transporter.sendMail(mailOptionsToAdmin, (error, info) => {
-    if (error) {
-      return res.status(500).send({ success: false, message: error.message });
-    }
-
-    // If the admin email is sent successfully, send email to the user
-    transporter.sendMail(mailOptionsToUser, (error, info) => {
+// Async function to send email
+const sendEmail = async (mailOptions) => {
+  return new Promise((resolve, reject) => {
+    transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        return res.status(500).send({ success: false, message: "Admin email sent but failed to send confirmation to user: " + error.message });
+        return reject(error);
       }
-
-      res.send({ success: true, message: "Emails sent successfully!" });
+      resolve(info);
     });
   });
+};
+
+app.post("/send", (req, res) => {
+  const { name, email, services, comments } = req.body;
+
+  // Send immediate response to the user
+  res.status(200).send({ success: true, message: "Your message has been received. We will get back to you soon." });
+
+  // Now, send emails in the background (not blocking the client)
+  (async () => {
+    try {
+      // Mail to admin
+      const mailOptionsToAdmin = {
+        from: process.env.GMAIL_USER,
+        to: "pratiksha.patil@appwizersolutions.com", // Admin email
+        subject: "New Contact Us Form Submission",
+        text: `
+          You have received a new submission from the Contact Us form on Appwizer.
+      
+          Details of the submission:
+      
+          Name: ${name}
+          Email: ${email}
+          Service Interested In: ${services.join(", ")}
+          Remark/Message: ${comments}
+      
+          Please follow up with the user at: ${email}.
+        `,
+        replyTo: email,
+      };
+
+      // Mail to user
+      const mailOptionsToUser = {
+        from: process.env.GMAIL_USER,
+        to: email,
+        subject: "Thank you for your submission!",
+        text: `Hi ${name},\n\nThank you for reaching out to us regarding "${services.join(
+      ", "
+    )}". We have received your message and will get back to you shortly.\n\nYou can learn more about our SmartTracker product here: https://smarttracker-next.appwizersolutions.com\n\nBest regards,\nAppwizer Team`,
+      };
+
+      // Send both emails
+      await sendEmail(mailOptionsToAdmin);
+      await sendEmail(mailOptionsToUser);
+    } catch (error) {
+      console.error("Failed to send emails: ", error.message);
+      // Optionally, you can log or notify admin in case of email sending failure
+    }
+  })();
 });
 
 app.listen(PORT, () => {
