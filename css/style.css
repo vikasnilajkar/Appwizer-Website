@@ -28,7 +28,13 @@ body {
 }
 .nav-link.active,
 .nav-link:hover {
-  color: #396afc !important;
+  color: #548f2f !important;
+}
+
+.btn:hover {
+  background-color: #cfdb04 !important;
+  border-color: #cfdb04 !important;
+  color: black;
 }
 /*============= CAROUSEL =============*/
 
@@ -64,6 +70,7 @@ body {
 
 .btn-primary {
   background-color: #548f2f;
+  border-color: #548f2f;
 }
 /*============= SOCIAL MEDIA STICKY BAR =============*/
 
