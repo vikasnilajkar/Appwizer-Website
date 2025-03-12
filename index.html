@@ -29,8 +29,36 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Open Sans:wght@600&display=swap"
     />
+    <style>
+      /* Floating WhatsApp Button */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        z-index: 1000;
+      }
+      .whatsapp-float img {
+        width: 100%;
+        height: auto;
+      }
+
+      /* Centered Button */
+      .whatsapp-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+      }
+    </style>
   </head>
   <body>
+      <!-- Floating WhatsApp Button -->
+      <a href="https://wa.me/919637418458" class="whatsapp-float" target="_blank">
+        <img src="img/WhatsApp.png" alt="WhatsApp" />
+      </a>
+  
     <div id="navigation-sticky">
       <!-- Navigation -->
       <nav class="navbar bg-light navbar-light navbar-expand-lg fixed-top">
@@ -346,8 +374,7 @@
 		<div class="col-12 text-center mt-5">
 			<h1 class="display-4 pt-4 header-text">SmartTracker</h1>
 			<div class="border-top border-dark w-50 my-3 mx-auto">
-				<p class="lead subheader-text">Optimize Cylinder Inventory with Real-Time Tracking. 
-          Prevent revenue loss from untracked and hoarded cylinders.
+				<p class="lead subheader-text">Optimize cylinder asset management with real-time tracking for maximum utilization and revenue generation.
 					
 			</div>
 		  </div>
@@ -716,6 +743,17 @@
             alert("There was a problem with your submission: " + error.message);
           });
       });
+    </script>
+
+    <script>
+      function openWhatsApp() {
+        var phoneNumber = "919637418458"; // Replace with your WhatsApp number
+        var message = encodeURIComponent(
+          "Hello, I'm interested in your service!"
+        );
+        var url = "https://wa.me/" + phoneNumber + "?text=" + message;
+        window.open(url, "_blank");
+      }
     </script>
 
     <!-- jQuery -->
