@@ -143,8 +143,24 @@ footer a {
 
 /*============= SOCKET =============*/
 .socket {
-  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Adjust spacing between items */
+  background-color: grey; /* Example background */
+  color: white; /* Text color */
+  padding: 16px; /* Adjust padding */
 }
+
+.socket p {
+  margin: 0;
+}
+
+.white-text {
+  color: white;
+  text-decoration: none;
+}
+
 /*============= MEDIA QUERIES =============*/
 
 /* Devices under 1199px (xl) */
@@ -213,4 +229,37 @@ Extra (xl) large devices (large desktops, 1200px and up)
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   will-change: transform;
+}
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 1000;
+}
+.whatsapp-float img {
+  width: 100%;
+  height: auto;
+}
+
+/* Centered Button */
+.whatsapp-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.white-text {
+  color: white;
+}
+.white-text:hover {
+  text-decoration: underline; /* Show underline on hover */
+  color: white; /* Keep text color white */
+}
+.privacy-policy {
+  padding-top: 80px; /* Adjust based on your navbar height */
+}
+.margin-text{
+    padding: 50px;
 }

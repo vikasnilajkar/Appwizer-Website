@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="description" content="Appwizer delivers strategic technology leadership, custom software development, talent development, and community training to bridge the gap between industry needs and emerging talent. Our mentorship, hands-on training programs, and expert consulting empower businesses to innovate, onboard skilled professionals, and launch software solutions faster. Partner with us to drive digital transformation, foster workforce readiness, and support community growth.">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Appwizer Solutions</title>
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- <link rel="stylesheet" href="css/global.css" /> -->
+    <!-- <link rel="stylesheet" href="css/index.css" /> -->
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Albert Sans:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open Sans:wght@600&display=swap"
+    />
+  </head>
+  <body class="privacy-policy">
+      <!-- Floating WhatsApp Button -->
+      <a href="https://wa.me/919637418458" class="whatsapp-float" target="_blank">
+        <img src="img/WhatsApp.png" alt="WhatsApp" />
+      </a>
+  
+    <div id="navigation-sticky">
+      <!-- Navigation -->
+      <nav class="navbar bg-light navbar-light navbar-expand-lg fixed-top">
+        <div class="container">
+          <a href="index.html" class="navbar-brand"
+            ><img
+              src="img/logo.png"
+              alt="appwizer solutions logo"
+              title="Appwizer logo"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a href="/index.html#home" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item"><a href="/index.html#about" class="nav-link">About</a></li>
+              <li class="nav-item"><a href="/index.html#services" class="nav-link">Services</a></li>
+              <li class="nav-item"><a href="/index.html#products" class="nav-link">Products</a></li>
+              <li class="nav-item"><a href="/index.html#contactus" class="nav-link">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- End Navigation -->
+    <script>
+      document.querySelectorAll('.nav-link').forEach(item => {
+        item.addEventListener('click', () => {
+          const navbarCollapse = document.querySelector('.navbar-collapse');
+          if (navbarCollapse.classList.contains('show')) {
+            navbarCollapse.classList.remove('show');
+          }
+        });
+      });
+    </script>
+    <script>
+      // Select all the nav links
+      const navLinks = document.querySelectorAll('.nav-link');
+    
+      // Loop through each nav link
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          // Remove the 'active' class from all links
+          navLinks.forEach(nav => nav.classList.remove('active'));
+          
+          // Add the 'active' class to the clicked link
+          this.classList.add('active');
+        });
+      });
+    </script>
+    
+    <script>
+      // Function to set active class on navigation links
+      function setActiveNavLink() {
+        const sections = document.querySelectorAll('section'); // Select all sections
+        const navLinks = document.querySelectorAll('.nav-link'); // Select all nav links
+    
+        const options = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.5 // Trigger when at least 50% of the section is visible
+        };
+    
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const id = entry.target.id;
+            const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
+    
+            if (entry.isIntersecting) {
+              navLink.classList.add('active');
+            } else {
+              navLink.classList.remove('active');
+            }
+          });
+        }, options);
+    
+        // Observe each section
+        sections.forEach(section => {
+          observer.observe(section);
+        });
+      }
+    
+      // Call the function when the DOM is fully loaded
+      document.addEventListener('DOMContentLoaded', setActiveNavLink);
+    </script>
+    
+    <div class="margin-text">
+      <h3>Privacy Policy</h3>
+      <p><em>Last updated: 28-March-2025</em></p>
+    
+      <p>SmartTracker ("we", "our", or "us") is committed to protecting your privacy. This privacy policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our mobile application (collectively, the "Services"). Please read this policy carefully to understand our views and practices regarding your personal data.</p>
+    
+      <h5>1. Information We Collect</h5>
+      <p>We may collect and process the following types of information:</p>
+    
+      <h6>a. Personal / Company / End Customer Information</h6>
+      <ul>
+        <li>Name</li>
+      <li>Address</li>
+      <li>Email Address</li>
+      <li>Contact Number</li>
+      <li>PAN/GST Number (if provided)</li>
+      
+      <li>Location data (if enabled by user)</li>
+      </ul>
+    
+      <h6>b. Usage Data</h6>
+      <ul>
+        <li>App interaction and feature usage</li>
+        <li>Log files (IP address, browser type, time zone)</li>
+        <li>Device information (OS, model, unique identifiers)</li>
+      </ul>
+    
+      <h6>c. Tracking Technologies</h6>
+      <ul>
+        <li>Cookies, analytics, and similar technologies to understand user behavior and improve services</li>
+      </ul>
+    
+      <h5>2. How We Use Your Information</h5>
+      <ul>
+        <li>To provide, maintain, and improve SmartTracker’s Services</li>
+        <li>To personalize user experience and offer customized features</li>
+        <li>For authentication, account management, and security</li>
+        <li>To communicate updates, promotions, and support</li>
+        <li>To analyze usage trends and optimize performance</li>
+        <li>To comply with legal obligations</li>
+      </ul>
+    
+      <h5>3. Sharing Your Information</h5>
+      <p><b>We do not sell or rent your personal data. We may share your information with:</p></b>
+      <ul>
+        <li><strong>Service providers</strong> assisting in operations (e.g., cloud hosting, analytics)</li>
+        <li><strong>Affiliates or business partners</strong> under strict confidentiality</li>
+        <li><strong>Legal authorities</strong> when required by law or to protect rights and safety</li>
+      </ul>
+    
+      <h5>4. Data Security</h5>
+      <p>We implement industry-standard security measures to protect your personal data from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure.</p>
+    
+      <h5>5. Your Rights and Choices</h5>
+      <p>Depending on your location, you may have the following rights:</p>
+      <ul>
+        <li>Access to your personal data</li>
+        <li>Correction or deletion of your data</li>
+        <li>Restrict or object to processing</li>
+        <li>Data portability</li>
+        <li>Withdraw consent at any time</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us at <strong>tejas.limaye@appwizersolutions.com</strong>.</p>
+    
+      <h5>6. Data Retention</h5>
+      <p>We retain personal data only as long as necessary to fulfill the purposes outlined in this policy or as required by applicable laws.</p>
+    
+      <h5>7. Changes to This Policy</h5>
+      <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+    
+      <h5>8. Contact Us</h5>
+      <p>If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
+      <p><strong>Email:</strong> tejas.limaye@appwizersolutions.com<br>
+      
+    
+
+</div>
+    <!-- Start Footer -->
+	 <footer >
+		<div class="container">
+			<div class="row justify-content-center text-center text-light">
+				<div class="col-md">
+					<img src="img/logo2.png" alt="">
+					<p class="text-center paramargin"> Appwizer Solutions (OPC) Private Limited </p>
+					<p class="text-center paramargin"> Regd Office: Flat no E/12 Srushti, Nr Guru Ganesh Nagar, Kothrud, Pune- 411038, Maharashtra </p>
+					<p class="text-center paramargin">
+            <i class="fas fa-phone"></i> <a href="tel:+919637418458">+91 9637418458</a>
+            <i class="fas fa-envelope"></i> <a href="mailto:tejas.limaye@appwizersolutions.com">appwizer</a>
+        </p>
+						
+				</div>
+			</div>
+		</div>
+	 </footer>
+
+    <!-- End Footer -->
+
+    <!-- Start Socket -->
+<div class="socket text-light text-center py-4">
+  <p><a href="privacy.html" class="white-text"> privacy policy</a></p>
+	<p>&copy; Appwizer Solutions </a></p>
+</div>
+  </div>
+  </body>
+  </html>
+  
